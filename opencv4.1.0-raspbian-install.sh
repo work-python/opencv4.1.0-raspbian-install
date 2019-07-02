@@ -16,8 +16,8 @@ apt-get install -y libpng-dev
 apt-get install -y libtiff-dev
 apt-get install -y libjasper-dev
 apt-get install -y libdc1394-22-dev
-
-
+apt-get install -y c++
+apt-get install -y g++
 # Install cpp headers for libcurl
  apt-get install libcurl4-gnutls-dev
 
