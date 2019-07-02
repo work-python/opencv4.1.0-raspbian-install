@@ -19,6 +19,11 @@ apt-get install -y libdc1394-22-dev
 apt-get install -y c++
 apt-get install -y g++
 apt-get install -y gcc
+apt-get install -y autoconf
+apt-get install -y ncurses-devel
+apt-get install -y automake 
+
+
 # Install cpp headers for libcurl
  apt-get install libcurl4-gnutls-dev
 
