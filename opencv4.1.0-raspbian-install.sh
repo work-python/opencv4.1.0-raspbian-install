@@ -33,18 +33,25 @@ mkdir /home/opencv4.1.0
 mkdir /home/opencv
 mdkir -p ~/tmp/cmake
 cd !$
-wget --no-check-certificate https://cmake.org/files/v3.9/cmake-3.9.0.tar.gz
-tar -zxvf cmake-3.9.0.tar.gz
-cd cmake-3.9.0
-./bootstrap --parallel=$(nproc) --system-curl
-make -j $(nproc)
 
+
+wget https://cmake.org/files/v3.10/cmake-3.10.2.tar.gz
+tar -xzf cmake-3.10.2.tar.gz
+cd cmake-3.10.2/
+#wget --no-check-certificate https://cmake.org/files/v3.9/cmake-3.9.0.tar.gz
+#tar -zxvf cmake-3.9.0.tar.gz
+#cd cmake-3.9.0
+#./bootstrap --parallel=$(nproc) --system-curl
+#make -j $(nproc)
+./bootstrap --system-curl
+make && make install
 # Uninstall cmake
 sudo apt remove cmake
 
 # Install new version from sources
 # (we should build a package instead)
 sudo make install
+
 
 
 
