@@ -23,6 +23,8 @@ apt-get install -y libdc1394-22-dev
 
 # Download and build a cmake version with SSL support
 # We use the system's libcurl to avoid later problems
+mkdir /home/opencv4.1.0
+mkdir /home/opencv
 mdkir -p ~/tmp/cmake
 cd !$
 wget --no-check-certificate https://cmake.org/files/v3.9/cmake-3.9.0.tar.gz
