@@ -3,9 +3,7 @@
 ```
 https://raw.githubusercontent.com/lihuate/opencv4.1.0-raspbian-install/master/opencv4.1.0-install.sh && chmod 777 opencv4.1.0-install.sh && bash opencv4.1.0-install.sh
 ```
-
-## 树莓派3b的opencv4.1.0解压后直接用
-
+## 脚本详情
 支持c++
 
 支持xfeatures2d
@@ -16,6 +14,10 @@ https://raw.githubusercontent.com/lihuate/opencv4.1.0-raspbian-install/master/op
 ```
 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/opencv4.1.0/ -DOPENCV_EXTRA_MODULES_PATH=/home/opencv/opencv_contrib-4.1.0/modules/ -DWITH_CUDA=ON  -DOPENCV_GENERATE_PKGCONFIG=ON -DBUILD_opencv_xfeatures2d=ON OPENCV_ENABLE_NONFREE=NO  ..
 ```
+
+## 手动安装
+
+
 
 请先执行如下命令配置环境：
 
