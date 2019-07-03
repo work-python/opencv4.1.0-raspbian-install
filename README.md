@@ -8,12 +8,24 @@
 
 支持opencv_contrib
 
-
-请把在/home/目录执行:
-```git clone https://github.com/lihuate/opencv4.1.0-raspbian-install.git```
 当时的编译命令是：
 ```
 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/opencv4.1.0/ -DOPENCV_EXTRA_MODULES_PATH=/home/opencv/opencv_contrib-4.1.0/modules/ -DWITH_CUDA=ON  -DOPENCV_GENERATE_PKGCONFIG=ON -DBUILD_opencv_xfeatures2d=ON OPENCV_ENABLE_NONFREE=NO  ..
+```
+
+请在/home/目录执行:
+```git clone https://github.com/lihuate/opencv4.1.0-raspbian-install.git```
+
+确保目录结构是这样的：
+
+```
+/home/opencv4.1.0/
+
+│   │   ├── 
+│   │   │   ├── home
+│   │   │   │   └── opencv4.1.0
+
+
 ```
 
 
