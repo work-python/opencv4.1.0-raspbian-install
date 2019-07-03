@@ -77,13 +77,9 @@ export LD_LIBRARY_PATH=/home/opencv/opencv4.1.0/lib:$LD_LIBRARY_PATH ">> ~/.bash
 source ~/.bashrc
 
 
-echo " OpenCV 环境变量："
-echo"/etc/ld.so.conf.d/opencv.conf >> /home/opencv/opencv4.1.0/lib "
-echo"~/.bashrc >>
-export PKG_CONFIG_PATH=/home/opencv/opencv4.1.0/lib/pkgconfig:$PKG_CONFIG_PATH
-export LD_LIBRARY_PATH=/home/opencv/opencv4.1.0/lib:$LD_LIBRARY_PATH ">> ~/.bashrc"
-echo"opencv版本及库信息："
-pkg-config --modversion opencv4
+echo "opencv版本及库信息："
+echo  "pkg-config --modversion opencv4"
 # 4.0.1
-pkg-config --libs opencv4
-pkg-config --cflags opencv4
+echo  "pkg-config --libs opencv4"
+echo  "pkg-config --cflags opencv4"
+pkg-config --modversion opencv4
