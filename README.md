@@ -1,6 +1,6 @@
 # 树莓派3b 解压版
 
-树莓派3b的opencv4.1.0解压后直接用
+## 树莓派3b的opencv4.1.0解压后直接用
 
 支持c++
 
@@ -12,6 +12,36 @@
 ```
 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/opencv4.1.0/ -DOPENCV_EXTRA_MODULES_PATH=/home/opencv/opencv_contrib-4.1.0/modules/ -DWITH_CUDA=ON  -DOPENCV_GENERATE_PKGCONFIG=ON -DBUILD_opencv_xfeatures2d=ON OPENCV_ENABLE_NONFREE=NO  ..
 ```
+
+请先执行如下命令配置环境：
+
+```
+apt-get install -y wget
+apt-get install -y build-essential
+apt-get install -y git
+apt-get install -y libgtk2.0-dev
+apt-get install -y pkg-config
+apt-get install -y libavcodec-dev
+apt-get install -y libavformat-dev
+apt-get install -y libswscale-dev
+apt-get install -y python-dev
+apt-get install -y python-numpy
+apt-get install -y libtbb2
+apt-get install -y libtbb-dev
+apt-get install -y libjpeg-dev
+apt-get install -y libpng-dev
+apt-get install -y libtiff-dev
+apt-get install -y libjasper-dev
+apt-get install -y libdc1394-22-dev
+apt-get install -y c++
+apt-get install -y g++
+apt-get install -y gcc
+apt-get install -y autoconf
+apt-get install -y ncurses-devel
+apt-get install -y automake 
+```
+
+
 
 请在/home/目录执行:
 ```git clone https://github.com/lihuate/opencv4.1.0-raspbian-install.git```
