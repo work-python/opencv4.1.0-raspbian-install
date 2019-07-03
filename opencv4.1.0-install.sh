@@ -3,6 +3,7 @@ apt-get install -y wget && apt-get install -y build-essential
 apt-get install -y git && apt-get install -y libgtk2.0-dev
 apt-get install -y pkg-config && apt-get install -y libavcodec-dev
 apt-get install -y libavformat-dev && apt-get install -y libswscale-dev
+apt-get install -y python-dev && apt-get install -y python-numpy
 apt-get install -y libtbb2 && apt-get install -y libtbb-dev
 apt-get install -y libjpeg-dev && apt-get install -y libpng-dev
 apt-get install -y libtiff-dev && apt-get install -y libjasper-dev
