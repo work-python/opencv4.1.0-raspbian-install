@@ -1,9 +1,9 @@
 # 树莓派3b 解压版
 
-######## 树莓派3b的opencv4.1.0解压后直接用
-######## 支持c++
-######## 支持xfeatures2d
-######## 支持opencv_contrib
+######## 树莓派3b的opencv4.1.0解压后直接用.
+######## 支持c++.
+######## 支持xfeatures2d.
+######## 支持opencv_contrib.
 
 请把在/home/目录执行:
 ```git clone https://github.com/lihuate/opencv4.1.0-raspbian-install.git```
