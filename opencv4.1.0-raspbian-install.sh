@@ -72,8 +72,8 @@ ldconfig
 
 
 echo "
-export PKG_CONFIG_PATH=/home/opencv/opencv4.1.0/lib/pkgconfig:$PKG_CONFIG_PATH
-export LD_LIBRARY_PATH=/home/opencv/opencv4.1.0/lib:$LD_LIBRARY_PATH ">> ~/.bashrc
+export PKG_CONFIG_PATH=/home/opencv4.1.0/lib/pkgconfig:$PKG_CONFIG_PATH
+export LD_LIBRARY_PATH=/home/opencv4.1.0/lib:$LD_LIBRARY_PATH ">> ~/.bashrc
 source ~/.bashrc
 
 
