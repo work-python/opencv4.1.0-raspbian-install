@@ -10,7 +10,7 @@ https://raw.githubusercontent.com/lihuate/opencv4.1.0-raspbian-install/master/op
 
 支持opencv_contrib
 
-当时的编译命令是：
+当时的编译指令是：
 ```
 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/opencv4.1.0/ -DOPENCV_EXTRA_MODULES_PATH=/home/opencv/opencv_contrib-4.1.0/modules/ -DWITH_CUDA=ON  -DOPENCV_GENERATE_PKGCONFIG=ON -DBUILD_opencv_xfeatures2d=ON OPENCV_ENABLE_NONFREE=NO  ..
 ```
