@@ -42,18 +42,19 @@ else
 fi
 grep 'export LD_LIBRARY_PATH=/home/opencv4.1.0/lib:$LD_LIBRARY_PATH' ~/.bashrc >/dev/null
 if [ $? -eq 0 ]; then
-    echo "存在跳过!"
+    echo "opencv4.1.0/lib存在跳过!"
 else
     echo "opencv4.1.0/lib不存在写入!"
     echo  'export LD_LIBRARY_PATH=/home/opencv4.1.0/lib:$LD_LIBRARY_PATH'   >>  ~/.bashrc
 fi
 else
-  echo  "bashrc文件不存在开使创建"
+  echo  "bashrc文件不存在开使创建开始写入"
  echo  'export PKG_CONFIG_PATH=/home/opencv4.1.0/lib/pkgconfig:$PKG_CONFIG_PATH'   >>  ~/.bashrc
  echo  'export LD_LIBRARY_PATH=/home/opencv4.1.0/lib:$LD_LIBRARY_PATH'   >>  ~/.bashrc
 fi
 
 source ~/.bashrc
 echo "安装完成"
+echo opencv版本 `pkg-config --modversion opencv4`
 rm -rf opencv4.1.0-install.sh
 
