@@ -1,3 +1,4 @@
+#!/bin/bash
 apt-get install -y wget && apt-get install -y build-essential
 apt-get install -y git && apt-get install -y libgtk2.0-dev
 apt-get install -y pkg-config && apt-get install -y libavcodec-dev
@@ -13,8 +14,44 @@ apt-get install -y ncurses-devel && apt-get install -y automake
 cd /home/ && git clone https://github.com/lihuate/opencv4.1.0-raspbian-install.git
 rm -rf /home/opencv4.1.0 && cd /home/
 cp -R /home/opencv4.1.0-raspbian-install/opencv4.1.0 /home/opencv4.1.0 && rm -rf opencv4.1.0-raspbian-install/
-echo "/home/opencv/opencv4.1.0/lib" >/etc/ld.so.conf.d/opencv.conf
+############################
+if  [ -f  "/etc/ld.so.conf.d/opencv.conf" ];then
+  echo  "文件存在"
+grep "/home/opencv/opencv4.1.0/lib" /etc/ld.so.conf.d/opencv.conf >/dev/null
+if [ $? -eq 0 ]; then
+    echo "存在跳过!"
+else
+    echo "不存在写入!"
+    echo "/home/opencv/opencv4.1.0/lib" >/etc/ld.so.conf.d/opencv.conf
+fi
+else
+  echo  "文件不存在开使创建"
+  echo "/home/opencv/opencv4.1.0/lib" >/etc/ld.so.conf.d/opencv.conf
+fi
 ldconfig
-echo  'export PKG_CONFIG_PATH=/home/opencv4.1.0/lib/pkgconfig:$PKG_CONFIG_PATH'   >>  ~/.bashrc
-echo  'export LD_LIBRARY_PATH=/home/opencv4.1.0/lib:$LD_LIBRARY_PATH'    >>  ~/.bashrc
+###############################
+if  [ -f  "~/.bashrc" ];then
+  echo  "文件存在"
+grep 'export PKG_CONFIG_PATH=/home/opencv4.1.0/lib/pkgconfig:$PKG_CONFIG_PATH' ~/.bashrc >/dev/null
+if [ $? -eq 0 ]; then
+    echo "存在跳过!"
+else
+    echo "不存在写入!"
+    echo  'export PKG_CONFIG_PATH=/home/opencv4.1.0/lib/pkgconfig:$PKG_CONFIG_PATH'   >>  ~/.bashrc
+fi
+grep 'export LD_LIBRARY_PATH=/home/opencv4.1.0/lib:$LD_LIBRARY_PATH' ~/.bashrc >/dev/null
+if [ $? -eq 0 ]; then
+    echo "存在跳过!"
+else
+    echo "不存在写入!"
+    echo  'export LD_LIBRARY_PATH=/home/opencv4.1.0/lib:$LD_LIBRARY_PATH'   >>  ~/.bashrc
+fi
+else
+  echo  "文件不存在开使创建"
+ echo  'export PKG_CONFIG_PATH=/home/opencv4.1.0/lib/pkgconfig:$PKG_CONFIG_PATH'   >>  ~/.bashrc
+fi
+
 source ~/.bashrc
+echo "安装完成"
+rm -rf opencv4.1.0-install.sh
+
