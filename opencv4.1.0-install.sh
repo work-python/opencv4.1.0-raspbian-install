@@ -17,39 +17,40 @@ rm -rf /home/opencv4.1.0 && cd /home/
 cp -R /home/opencv4.1.0-raspbian-install/opencv4.1.0 /home/opencv4.1.0 && rm -rf opencv4.1.0-raspbian-install/
 ############################
 if  [ -f  "/etc/ld.so.conf.d/opencv.conf" ];then
-  echo  "文件存在"
+  echo  "/etc/ld.so.conf.d/opencv.conf文件存在"
 grep "/home/opencv/opencv4.1.0/lib" /etc/ld.so.conf.d/opencv.conf >/dev/null
 if [ $? -eq 0 ]; then
-    echo "存在跳过!"
+    echo "/home/opencv/opencv4.1.0/lib存在跳过!"
 else
-    echo "不存在写入!"
+    echo "/home/opencv/opencv4.1.0/lib不存在写入!"
     echo "/home/opencv/opencv4.1.0/lib" >/etc/ld.so.conf.d/opencv.conf
 fi
 else
-  echo  "文件不存在开使创建"
+  echo  "/etc/ld.so.conf.d/opencv.conf文件不存在开使创建"
   echo "/home/opencv/opencv4.1.0/lib" >/etc/ld.so.conf.d/opencv.conf
 fi
 ldconfig
 ###############################
 if  [ -f  "~/.bashrc" ];then
-  echo  "文件存在"
+  echo  ".bashrc文件存在"
 grep 'export PKG_CONFIG_PATH=/home/opencv4.1.0/lib/pkgconfig:$PKG_CONFIG_PATH' ~/.bashrc >/dev/null
 if [ $? -eq 0 ]; then
     echo "存在跳过!"
 else
-    echo "不存在写入!"
+    echo "ib/pkgconfig不存在写入!"
     echo  'export PKG_CONFIG_PATH=/home/opencv4.1.0/lib/pkgconfig:$PKG_CONFIG_PATH'   >>  ~/.bashrc
 fi
 grep 'export LD_LIBRARY_PATH=/home/opencv4.1.0/lib:$LD_LIBRARY_PATH' ~/.bashrc >/dev/null
 if [ $? -eq 0 ]; then
     echo "存在跳过!"
 else
-    echo "不存在写入!"
+    echo "opencv4.1.0/lib不存在写入!"
     echo  'export LD_LIBRARY_PATH=/home/opencv4.1.0/lib:$LD_LIBRARY_PATH'   >>  ~/.bashrc
 fi
 else
-  echo  "文件不存在开使创建"
+  echo  "bashrc文件不存在开使创建"
  echo  'export PKG_CONFIG_PATH=/home/opencv4.1.0/lib/pkgconfig:$PKG_CONFIG_PATH'   >>  ~/.bashrc
+ echo  'export LD_LIBRARY_PATH=/home/opencv4.1.0/lib:$LD_LIBRARY_PATH'   >>  ~/.bashrc
 fi
 
 source ~/.bashrc
