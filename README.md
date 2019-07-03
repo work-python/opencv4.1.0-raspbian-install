@@ -1,10 +1,12 @@
 # 树莓派3b 解压版
 
-树莓派3b的opencv4.1.0解压后直接用
-支持c++
-支持xfeatures2d
-支持opencv_contrib
-请把在/home/目录执行 ```git clone https://github.com/lihuate/opencv4.1.0-raspbian-install.git```
+######## 树莓派3b的opencv4.1.0解压后直接用
+######## 支持c++
+######## 支持xfeatures2d
+######## 支持opencv_contrib
+
+请把在/home/目录执行:
+```git clone https://github.com/lihuate/opencv4.1.0-raspbian-install.git```
 当时的编译命令是：
 ```
 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/opencv4.1.0/ -DOPENCV_EXTRA_MODULES_PATH=/home/opencv/opencv_contrib-4.1.0/modules/ -DWITH_CUDA=ON  -DOPENCV_GENERATE_PKGCONFIG=ON -DBUILD_opencv_xfeatures2d=ON OPENCV_ENABLE_NONFREE=NO  ..
