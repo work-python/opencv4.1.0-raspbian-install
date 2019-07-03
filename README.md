@@ -1,4 +1,4 @@
-# 树莓派3b 解压版
+# 树莓派3b 解压版 C++
 一键安装脚本：
 
 请在root环境下执行
@@ -7,7 +7,7 @@ wget https://raw.githubusercontent.com/lihuate/opencv4.1.0-raspbian-install/mast
 ```
 ## 脚本详情
 支持c++
-
+不支持 python
 支持xfeatures2d
 
 支持opencv_contrib
