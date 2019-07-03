@@ -44,7 +44,9 @@ apt-get install -y automake
 
 
 请在/home/目录执行:
-```git clone https://github.com/lihuate/opencv4.1.0-raspbian-install.git```
+```git clone https://github.com/lihuate/opencv4.1.0-raspbian-install.git
+   cp -R opencv4.1.0-raspbian-install/ opencv4.1.0 &&rm -rf opencv4.1.0-raspbian-install/
+```
 
 确保目录结构是这样的：
 
