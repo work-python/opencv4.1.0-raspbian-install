@@ -1,7 +1,11 @@
 # 树莓派3b 解压版
 一键安装脚本：
 ```
-https://raw.githubusercontent.com/lihuate/opencv4.1.0-raspbian-install/master/opencv4.1.0-install.sh && chmod 777 opencv4.1.0-install.sh && bash opencv4.1.0-install.sh
+# 请在root环境下执行
+# 请执行：
+sudo apt-get install wget
+
+wget https://raw.githubusercontent.com/lihuate/opencv4.1.0-raspbian-install/master/opencv4.1.0-install.sh && chmod 777 opencv4.1.0-install.sh && bash opencv4.1.0-install.sh
 ```
 ## 脚本详情
 支持c++
