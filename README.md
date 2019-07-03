@@ -21,9 +21,9 @@ cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/opencv4.1.0/ -DOPE
 ```
 /home/opencv4.1.0/
 
-│   │   ├── 
-│   │   │   ├── home
-│   │   │   │   └── opencv4.1.0
+ │   ├── 
+ │   │   ├── home
+ │   │   │   └── opencv4.1.0
 
 
 ```
