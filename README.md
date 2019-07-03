@@ -28,6 +28,27 @@ cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/opencv4.1.0/ -DOPE
 
 ```
 
+配置环境变量：
+
+```
+echo "/home/opencv/opencv4.1.0/lib" >/etc/ld.so.conf.d/opencv.conf
+ldconfig
+
+echo "export PKG_CONFIG_PATH=/home/opencv4.1.0/lib/pkgconfig:$PKG_CONFIG_PATH" >> ~/.bashrc
+echo "export LD_LIBRARY_PATH=/home/opencv4.1.0/lib:$LD_LIBRARY_PATH">> ~/.bashrc
+source ~/.bashrc
+
+```
+
+查看opencv版本及库信息：
+
+```
+pkg-config --modversion opencv4
+# 4.0.1
+pkg-config --libs opencv4
+pkg-config --cflags opencv4
+```
+
 
 # 一件编译安装版
 ###  opencv4.1.0-raspbian-install
