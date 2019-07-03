@@ -31,13 +31,13 @@ else
 fi
 ldconfig
 ###############################
-if  [ -f  "~/.bashrc" ];then
-  echo  ".bashrc文件存在"
-  else
-  echo  "bashrc文件不存在开使创建开始写入"
- echo  'export PKG_CONFIG_PATH=/home/opencv4.1.0/lib/pkgconfig:$PKG_CONFIG_PATH'   >>  ~/.bashrc
- echo  'export LD_LIBRARY_PATH=/home/opencv4.1.0/lib:$LD_LIBRARY_PATH'   >>  ~/.bashrc
-fi
+#if  [ -f  '~/.bashrc' ];then
+#  echo  ".bashrc文件存在"
+#  else
+#  echo  "bashrc文件不存在开使创建开始写入"
+#  echo  'export PKG_CONFIG_PATH=/home/opencv4.1.0/lib/pkgconfig:$PKG_CONFIG_PATH'   >>  ~/.bashrc
+#  echo  'export LD_LIBRARY_PATH=/home/opencv4.1.0/lib:$LD_LIBRARY_PATH'   >>  ~/.bashrc
+#fi
 grep 'export PKG_CONFIG_PATH=/home/opencv4.1.0/lib/pkgconfig:$PKG_CONFIG_PATH' ~/.bashrc >/dev/null
 if [ $? -eq 0 ]; then
     echo "存在跳过!"
