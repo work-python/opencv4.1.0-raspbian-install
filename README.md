@@ -62,9 +62,9 @@ apt-get install -y automake
 ```
 /home/opencv4.1.0/
 
- │   ├── 
- │   │   ├── home
- │   │   │   └── opencv4.1.0
+   ├── 
+   │   ├── home
+   │   │   └── opencv4.1.0
 
 
 ```
