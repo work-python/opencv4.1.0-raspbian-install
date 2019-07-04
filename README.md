@@ -100,7 +100,7 @@ pkg-config --cflags opencv4
 # 一件编译安装版
 ###  opencv4.1.0-raspbian-install
 opencv4.1.0树莓派一键编译安装脚本
-
+如果编译线程太大 手动编译  make -j[线程数]
 wget https://raw.githubusercontent.com/lihuate/opencv4.1.0-raspbian-install/master/opencv4.1.0-raspbian-install.sh &&chmod 777 opencv4.1.0-raspbian-install.sh &&bash opencv4.1.0-raspbian-install.sh
 
 如果安装时硬盘变成只读
