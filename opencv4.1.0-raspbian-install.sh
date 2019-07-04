@@ -1,4 +1,9 @@
 #!/bin/sh
+myPath="/home/" 
+if [ ! -x "$myPath"]; then 
+echo "只读文件系统解锁"
+sudo mount /dev/mmcblk0p2 -o rw,remount
+fi 
 apt-get install -y wget
 apt-get install -y build-essential
 apt-get install -y git
