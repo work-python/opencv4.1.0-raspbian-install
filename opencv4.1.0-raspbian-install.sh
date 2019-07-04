@@ -35,22 +35,50 @@ mdkir -p ~/tmp/cmake
 cd !$
 
 
-wget https://cmake.org/files/v3.10/cmake-3.10.2.tar.gz
-tar -xzf cmake-3.10.2.tar.gz
-cd cmake-3.10.2/
-#wget --no-check-certificate https://cmake.org/files/v3.9/cmake-3.9.0.tar.gz
-#tar -zxvf cmake-3.9.0.tar.gz
-#cd cmake-3.9.0
-#./bootstrap --parallel=$(nproc) --system-curl
-#make -j $(nproc)
-./bootstrap --system-curl
-make && make install
-# Uninstall cmake
-sudo apt remove cmake
+# wget https://cmake.org/files/v3.10/cmake-3.10.2.tar.gz
+# tar -xzf cmake-3.10.2.tar.gz
+# cd cmake-3.10.2/
+# #wget --no-check-certificate https://cmake.org/files/v3.9/cmake-3.9.0.tar.gz
+# #tar -zxvf cmake-3.9.0.tar.gz
+# #cd cmake-3.9.0
+# #./bootstrap --parallel=$(nproc) --system-curl
+# #make -j $(nproc)
+# ./bootstrap --system-curl
+# make && make install
+# # Uninstall cmake
+# sudo apt remove cmake
 
-# Install new version from sources
-# (we should build a package instead)
-sudo make install
+# # Install new version from sources
+# # (we should build a package instead)
+# sudo make install
+
+
+cmake -version
+if [ $? -ne 0 ]; then
+    echo "失败，"
+    echo "开始安装cmake3.10.2"
+    wget https://raw.githubusercontent.com/lihuate/opencv4.1.0-raspbian-install/master/cmake-3.10.2.tar.gz
+    tar -xzf cmake-3.10.2.tar.gz
+    cd cmake-3.10.2/
+    ./bootstrap --system-curl
+    make -j2 && make install
+    sudo apt remove cmake
+    sudo make install
+else
+    echo "成功系统存在cmake"
+    echo "cmake版本及库信息："
+    echo "请安装支持c++11的cmake版本，"
+    echo opencv版本 `cmake -version`
+fi
+cmake -version
+if [ $? -ne 0 ]; then
+    echo "失败，请手动安装cmake1.10.X以上版本"
+ else  
+fi 
+rm -rf cmake-3.10.2.tar.gz
+cd ..
+rm -rf cmake-3.10.2/
+
 
 
 
