@@ -107,3 +107,16 @@ wget https://raw.githubusercontent.com/lihuate/opencv4.1.0-raspbian-install/mast
 
 如果安装时硬盘变成只读
 sudo mount /dev/mmcblk0p2 -o rw,remount
+
+
+# 例 - SURF 特征点检测
+
+将会在当前目录下生成 img1.jog img2.jpg Good Matches.jpg
+
+注意  这依赖cmake c++11
+
+一键脚本：
+
+```
+wget https://raw.githubusercontent.com/lihuate/opencv4.1.0-raspbian-install/master/SURF_test.sh && chmod 777 SURF_test.sh && bash SURF_test.sh
+```
