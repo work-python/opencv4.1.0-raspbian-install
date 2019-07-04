@@ -75,9 +75,9 @@ if [ $? -ne 0 ]; then
     echo "失败，"
     apt-get install libcurl4-gnutls-dev
     echo "开始安装cmake3.10.2"
-    wget https://raw.githubusercontent.com/lihuate/opencv4.1.0-raspbian-install/master/cmake-3.10.2.tar.gz
-    tar -xzf cmake-3.10.2.tar.gz
-    cd cmake-3.10.2/
+    wget https://raw.githubusercontent.com/lihuate/opencv4.1.0-raspbian-install/master/cmake-3.9.0.tar.gz
+    tar -xzf cmake-3.9.0.tar.gz
+    cd cmake-3.9.0/
     ./bootstrap --system-curl
     make -j2 && make install
     sudo apt remove cmake
