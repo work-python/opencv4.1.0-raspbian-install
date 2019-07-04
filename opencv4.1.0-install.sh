@@ -85,7 +85,7 @@ if [ $? -ne 0 ]; then
 else
     echo "成功系统存在cmake"
     echo "cmake版本及库信息："
-    echo "请安装支持c++11的cmake版本，"
+    echo "请确认当前版本支持c++11，"
     echo opencv版本 `cmake -version`
 fi
 cmake -version
