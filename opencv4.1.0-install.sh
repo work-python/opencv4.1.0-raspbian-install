@@ -78,7 +78,7 @@ if [ $? -ne 0 ]; then
     tar -xzf cmake-3.10.2.tar.gz
     cd cmake-3.10.2/
     ./bootstrap --system-curl
-    make && make install
+    make -j2 && make install
     sudo apt remove cmake
     sudo make install
 else
