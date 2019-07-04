@@ -61,7 +61,20 @@ fi
 
 
 source ~/.bashrc
-echo "安装完成"
-echo opencv版本 `pkg-config --modversion opencv4`
-rm -rf opencv4.1.0-install.sh
+
+
+pkg-config --modversion opencv4
+if [ $? -ne 0 ]; then
+    echo "失败，自我删除"
+    rm -rf /home/opencv4.1.0
+    rm -rf $0
+else
+    echo "成功"
+    echo "opencv版本及库信息："
+    echo opencv版本 `pkg-config --modversion opencv4`
+    # 4.0.1
+    echo opencv依赖  `pkg-config --libs opencv4`
+    echo cflags `pkg-config --cflags opencv4`
+fi
+rm -rf $0
 
