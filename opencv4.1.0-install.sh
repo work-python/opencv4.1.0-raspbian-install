@@ -10,12 +10,18 @@ apt-get install -y libtiff-dev && apt-get install -y libjasper-dev
 apt-get install -y libdc1394-22-dev
 apt-get install -y c++ && apt-get install -y g++ && apt-get install -y gcc && apt-get install -y autoconf
 apt-get install -y ncurses-devel && apt-get install -y automake 
-
-
-cd /home/ && git clone https://github.com/lihuate/opencv4.1.0-raspbian-install.git
-rm -rf /home/opencv4.1.0 && cd /home/
-cp -R /home/opencv4.1.0-raspbian-install/opencv4.1.0 /home/opencv4.1.0 && rm -rf opencv4.1.0-raspbian-install/
-############################
+#######################################################################################################################################
+if  [ -d "/home/opencv4.1.0/" ];then
+  echo  "文件夹存在"
+  rm -rf /home/opencv4.1.0 && cd /home/
+  cd /home/ && git clone https://github.com/lihuate/opencv4.1.0-raspbian-install.git
+  cp -R /home/opencv4.1.0-raspbian-install/opencv4.1.0 /home/opencv4.1.0 && rm -rf opencv4.1.0-raspbian-install/
+else
+  echo  "文件夹不存在"
+  cd /home/ && git clone https://github.com/lihuate/opencv4.1.0-raspbian-install.git
+  cp -R /home/opencv4.1.0-raspbian-install/opencv4.1.0 /home/opencv4.1.0 && rm -rf opencv4.1.0-raspbian-install/
+fi
+########################################################################################################################################
 if  [ -f  "/etc/ld.so.conf.d/opencv.conf" ];then
   echo  "/etc/ld.so.conf.d/opencv.conf文件存在"
 grep "/home/opencv/opencv4.1.0/lib" /etc/ld.so.conf.d/opencv.conf >/dev/null
