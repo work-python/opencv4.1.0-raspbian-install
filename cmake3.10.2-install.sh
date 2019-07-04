@@ -31,3 +31,4 @@ if [ $? -ne 0 ]; then
     echo "失败，请手动安装cmake1.10.X以上版本"
  else  
 fi 
+
