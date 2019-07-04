@@ -8,6 +8,8 @@ wget https://raw.githubusercontent.com/lihuate/opencv4.1.0-raspbian-install/mast
 ## 脚本详情
 支持c++
 
+支持 cmake1.10.2
+
 支持GPU CUDA
 
 支持 PKGCONFIG
