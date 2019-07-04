@@ -89,10 +89,18 @@ fi
 
 source ~/.bashrc
 
-
-echo "opencv版本及库信息："
-echo  "pkg-config --modversion opencv4"
-# 4.0.1
-echo  "pkg-config --libs opencv4"
-echo  "pkg-config --cflags opencv4"
 pkg-config --modversion opencv4
+if [ $? -ne 0 ]; then
+    echo "失败，自我删除"
+    rm -rf /home/opencv
+    rm -rf /home/opencv4.1.0
+    rm -rf $0
+else
+    echo "成功"
+    echo "opencv版本及库信息："
+    echo opencv版本 `pkg-config --modversion opencv4`
+    # 4.0.1
+    echo opencv依赖  `pkg-config --libs opencv4`
+    echo cflags `pkg-config --cflags opencv4`
+fi
+
