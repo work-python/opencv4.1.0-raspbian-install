@@ -25,6 +25,6 @@ echo "失败，请手动cmake1.10.X以上版本"
 fi
 
 
-rm -rf cmake-3.10.2.tar.gz
+rm -rf cmake-3.9.0.tar.gz
 cd ..
-rm -rf cmake-3.10.2/
+rm -rf cmake-3.9.0/
