@@ -68,6 +68,30 @@ fi
 source ~/.bashrc
 
 
+
+
+cmake -version
+if [ $? -ne 0 ]; then
+    echo "失败，"
+    echo "开始安装cmake3.10.2"
+    wget https://cmake.org/files/v3.10/cmake-3.10.2.tar.gz
+    tar -xzf cmake-3.10.2.tar.gz
+    cd cmake-3.10.2/
+    ./bootstrap --system-curl
+    make && make install
+    sudo apt remove cmake
+    sudo make install
+else
+    echo "成功"
+    echo "cmake版本及库信息："
+    echo opencv版本 `cmake -version`
+    rm -rf cmake
+fi
+cmake -version
+if [ $? -ne 0 ]; then
+    echo "失败，请手动安装cmake1.10.X以上版本"
+ else  
+fi 
 pkg-config --modversion opencv4
 if [ $? -ne 0 ]; then
     echo "失败，自我删除"
