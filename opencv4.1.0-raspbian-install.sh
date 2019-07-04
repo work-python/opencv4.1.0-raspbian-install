@@ -71,8 +71,22 @@ echo "/home/opencv/opencv4.1.0/lib" >/etc/ld.so.conf.d/opencv.conf
 ldconfig
 
 
-echo "export PKG_CONFIG_PATH=/home/opencv4.1.0/lib/pkgconfig:$PKG_CONFIG_PATH" >> ~/.bashrc
-echo "export LD_LIBRARY_PATH=/home/opencv4.1.0/lib:$LD_LIBRARY_PATH">> ~/.bashrc
+grep 'export PKG_CONFIG_PATH=/home/opencv4.1.0/lib/pkgconfig:$PKG_CONFIG_PATH' ~/.bashrc >/dev/null
+if [ $? -eq 0 ]; then
+    echo "存在跳过!"
+else
+    echo "ib/pkgconfig不存在写入!"
+    echo  'export PKG_CONFIG_PATH=/home/opencv4.1.0/lib/pkgconfig:$PKG_CONFIG_PATH'   >>  ~/.bashrc
+fi
+grep 'export LD_LIBRARY_PATH=/home/opencv4.1.0/lib:$LD_LIBRARY_PATH' ~/.bashrc >/dev/null
+if [ $? -eq 0 ]; then
+    echo "opencv4.1.0/lib存在跳过!"
+else
+    echo "opencv4.1.0/lib不存在写入!"
+    echo  'export LD_LIBRARY_PATH=/home/opencv4.1.0/lib:$LD_LIBRARY_PATH'   >>  ~/.bashrc
+fi
+
+
 source ~/.bashrc
 
 
