@@ -1,4 +1,9 @@
 #!/bin/bash
+myPath="/home/" 
+if [ ! -x "$myPath"]; then 
+echo "只读文件系统解锁"
+sudo mount /dev/mmcblk0p2 -o rw,remount
+fi 
 apt-get install -y wget && apt-get install -y build-essential
 apt-get install -y git && apt-get install -y libgtk2.0-dev
 apt-get install -y pkg-config && apt-get install -y libavcodec-dev
