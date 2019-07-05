@@ -116,4 +116,3 @@ else
     echo cflags `pkg-config --cflags opencv4`
 fi
 rm -rf $0
-
