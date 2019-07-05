@@ -75,15 +75,15 @@ else
     echo "请安装支持c++11的cmake版本，"
     echo opencv版本 `cmake -version`
 fi
-cmake -version
-if [ $? -ne 0 ]; then
-    echo "失败，请手动安装cmake1.10.X以上版本"
- else  
- echo "OK"
-fi 
-rm -rf cmake-3.10.2.tar.gz
-cd ..
-rm -rf cmake-3.10.2/
+# cmake -version
+# if [ $? -ne 0 ]; then
+#     echo "失败，请手动安装cmake1.10.X以上版本"
+#  else  
+#  echo "OK"
+# fi 
+# rm -rf cmake-3.10.2.tar.gz
+# cd ..
+# rm -rf cmake-3.10.2/
 
 
 
