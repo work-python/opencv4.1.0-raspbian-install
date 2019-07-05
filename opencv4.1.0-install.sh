@@ -93,7 +93,8 @@ if [[ $path =~ "3.9.0" ]] ; then
     echo "安装成功"
     echo "cmake版本及库信息："
     echo cmake版本 $path
-
+else
+echo 'erro'
 fi
 
 
@@ -109,5 +110,5 @@ else
     # 4.0.1
     echo opencv依赖  `pkg-config --libs opencv4`
     echo cflags `pkg-config --cflags opencv4`
-
+fi
 rm -rf $0
