@@ -84,7 +84,8 @@ if [ $? -ne 0 ]; then
     sudo apt remove cmake
     sudo make install
 else
-
+echo 'erro'
+fi
 echo `cmake -version` > e.txt
 path=`cut -d ' ' -f 3 e.txt`
 rm -rf e.txt
@@ -108,5 +109,5 @@ else
     # 4.0.1
     echo opencv依赖  `pkg-config --libs opencv4`
     echo cflags `pkg-config --cflags opencv4`
-fi
+
 rm -rf $0
